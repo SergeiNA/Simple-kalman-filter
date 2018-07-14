@@ -9,15 +9,15 @@
 % Initialization
 T_temp =72;         % True temperature
 EST_ini = 71;       % initial temperature
-ERR_ini = 2;        
+ERR_ini = 3;        
 MEA_ini = 75;       % initial measurment
 ERR_mea=4;
 
-MEA=[75 71 70 74 73 75];
+MEA=[75 71 70 74 73 75 70 69];
 EST=EST_ini;
 ERR_est=ERR_ini;
 
-for i=1:5
+for i=1:8
     KG=ERR_est/(ERR_est+ERR_mea);
     EST=EST+KG*(MEA(i)-EST);
     ERR_est=(1-KG)*ERR_est;
